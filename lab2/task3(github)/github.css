@@ -15,14 +15,18 @@ body {
   padding-bottom: 1.5em;
   height: 100%;
   background-color: #1e2321;
-  display: flex;
+  display: grid;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   text-align: center;
   border-radius: 20px;
   box-shadow: 0 19px 38px rgba(30, 35, 33, 1), 0 15px 12px rgba(30, 35, 33, 0.2);
   flex-wrap: wrap;
   color: #f4f4f4;
+  min-height: 560px;
+  align-items: flex-end;
+  min-height: 560px;
+  grid-template-rows: auto 1fr auto;
 }
 
 h1, h2 {
@@ -155,9 +159,15 @@ input:checked + .slider:before {
 
 .package-container {
   display: flex;
-  align-items: center;
+ 
   justify-content: center;
   flex-wrap: wrap;
+  
+  gap: 40px;  
+  grid-template-rows: auto 1fr auto;
+  
+  
 }
+
 
 

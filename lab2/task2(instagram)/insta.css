@@ -9,11 +9,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 100px;
+    
 }
 .backgroundimg{
     position: relative;
     padding: 82px 15px;
     display: flex;
+   
 }
 .image-in{
     position: absolute;
@@ -25,6 +28,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     padding: 15px 0px 30px;
+    margin-right: 1000px;
 }
 .signup{
     border: 1px solid rgba(85, 85, 85, 0.274);
@@ -34,6 +38,9 @@ body{
     display: flex;
     flex-direction: column;
     padding: 52px;
+    
+
+    
 } 
 
 .input-login{

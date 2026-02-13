@@ -45,11 +45,13 @@
 }
 
 .login {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 40%;
+        
+        
 }
 
 input {
@@ -111,8 +113,9 @@ p span {
 }
 a {
     display: block;
-    margin-top: 20px; /* Мәтінді төмен жылжыту үшін */
+    margin-top: 40px; /* Мәтінді төмен жылжыту үшін */
     font-size: 14px;
+    
 }
 a:hover {
     text-decoration: underline;
