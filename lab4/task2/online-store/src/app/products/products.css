@@ -1,0 +1,9 @@
+.products-grid {
+    display: grid;
+    /* Экран еніне қарай автоматты түрде бағандар санын анықтау */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px; /* Карточкалар арасындағы қашықтық */
+    padding: 30px; /* Жалпы тордың шетіндегі бос орын */
+    max-width: 1200px;
+    margin: 0 auto; /* Ортаға туралау */
+}

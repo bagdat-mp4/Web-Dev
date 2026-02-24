@@ -1,0 +1,45 @@
+<div class="product-card">
+  <div class="image-container">
+      <img [src]="currentImage" alt="{{ product.name }}" class="main-img">
+  </div>
+  
+  <div class="gallery">
+    @for (img of product.images; track img) {
+      <img 
+        [src]="img" 
+        (click)="changeImage(img)" 
+        class="thumbnail" 
+        [class.active]="img === currentImage"
+        alt="thumbnail"
+      >
+    }
+  </div>
+
+  <div class="product-info">
+    <h3 class="product-title" title="{{ product.name }}">{{ product.name }}</h3>
+    
+    <div class="rating-container">
+        <span class="stars">⭐⭐⭐⭐⭐</span> 
+        <span class="rating-text">{{ product.rating }} / 5</span>
+    </div>
+
+    <h3 class="price">{{ product.price | number:'1.0-0' }} ₸</h3>
+
+    <p class="description" title="{{ product.description }}">{{ product.description }}</p>
+    
+    <div class="actions">
+      <a [href]="product.link" target="_blank" class="btn kaspi-btn">
+        Kaspi-де көру
+      </a>
+      
+      <div class="share-row">
+        <button (click)="shareWhatsApp()" class="btn wa-btn">
+          <i class="fa fa-whatsapp"></i> WhatsApp
+        </button>
+        <button (click)="shareTelegram()" class="btn tg-btn">
+          <i class="fa fa-telegram"></i> Telegram
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
