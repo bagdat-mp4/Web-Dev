@@ -1,166 +1,113 @@
-/* Карточканың жалпы дизайны */
 .product-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb; /* Өте нәзік жиек */
-  border-radius: 16px; /* Жұмсақ бұрыштар */
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Заманауи жұмсақ көлеңке */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%; /* Карточкалардың биіктігі бірдей болу үшін */
+  background: white;
+  transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-/* Карточкаға тышқан апарғанда сәл көтеріледі */
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* --- Суреттер бөлігі --- */
 .image-container {
-    height: 200px; /* Басты суреттің биіктігін шектейміз */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    background-color: #f9fafb; /* Сурет астына сәл сұр фон */
-    border-radius: 12px;
-    padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Сурет созылып кетпеуі үшін */
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .gallery {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .thumbnail {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border: 2px solid #e5e7eb;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border: 2px solid #eee;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
-}
-
-.thumbnail:hover {
-    border-color: #9ca3af;
+  transition: 0.2s;
 }
 
 .thumbnail.active {
-  border-color: #f14635; /* Kaspi қызыл түсі */
-  transform: scale(1.05);
-}
-
-/* --- Ақпарат бөлігі --- */
-.product-info {
-    flex-grow: 1; /* Бос орынның бәрін алады */
-    display: flex;
-    flex-direction: column;
+  border-color: #f14635;
 }
 
 .product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8px;
-  /* Тақырыпты 2 қатардан асырмау (көп нүкте қою) */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2; /* <-- Ескертуді кетіретін стандартты код қосылды */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  height: 2.4em; 
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #333;
 }
-
-.rating-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-}
-.stars { filter: grayscale(30%); opacity: 0.8; }
-.rating-text { color: #6b7280; font-weight: 500; }
 
 .price {
-  color: #f14635; /* Kaspi қызыл түсі */
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 24px;
+  color: #333;
   margin: 10px 0;
 }
 
+.likes-count {
+  color: #f14635;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
 .description {
-  color: #4b5563; /* Сұр түсті мәтін */
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  /* Сипаттаманы 3 қатардан асырмау */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3; /* <-- Ескертуді кетіретін стандартты код қосылды */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  flex-grow: 1; /* Батырмаларды төмен қарай итереді */
+  color: #666;
+  font-size: 14px;
+  flex-grow: 1; /* Орынды толтырып тұру үшін */
 }
 
-/* --- Батырмалар --- */
 .actions {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-.share-row {
-    display: flex;
-    gap: 10px;
+.button-row {
+  display: flex;
+  gap: 10px;
 }
 
 .btn {
-    border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.2s;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
-/* Kaspi батырмасы - үлкен және қызыл */
-.kaspi-btn {
-  background-color: #f14635;
-  color: white;
-  width: 87%; /* Толық еніне жайылады */
-}
-.kaspi-btn:hover { background-color: #d93c2c; }
+.kaspi-btn { background: #f14635; color: white; }
+.kaspi-btn:hover { background: #d93d2d; }
 
-/* WhatsApp батырмасы (жасыл) */
-.wa-btn {
-  background-color: #25D366;
-  color: white;
-  flex: 1; /* Екеуі тең орын бөліседі */
-}
-.wa-btn:hover { background-color: #1da851; }
+.like-btn { background: #f0f0f0; color: #333; }
+.like-btn:hover { background: #e0e0e0; }
 
-/* Telegram батырмасы (көк) */
-.tg-btn {
-  background-color: #0088cc;
-  color: white;
-  flex: 1; /* Екеуі тең орын бөліседі */
-}
-.tg-btn:hover { background-color: #0077b3; }
+.delete-btn { background: #ff4d4d; color: white; }
+.delete-btn:hover { background: #cc0000; }
+
+.wa-btn { background: #25D366; color: white; }
+.tg-btn { background: #0088cc; color: white; }

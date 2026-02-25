@@ -1,6 +1,29 @@
-<header class="header">
-  <h1>🛍️ Online Store</h1>
-  <p>Kaspi.kz үздік өнімдер</p>
+<header style="background: #f14635; color: white; padding: 20px; text-align: center;">
+  <h1>🛍️ Kaspi-ге ұқсас дүкен</h1>
 </header>
 
-<app-products></app-products>
+<nav style="display: flex; justify-content: center; gap: 15px; margin: 20px; flex-wrap: wrap;">
+  @for (cat of categories; track cat.id) {
+    <button 
+      (click)="selectCategory(cat)" 
+      [style.background]="selectedCategory?.id === cat.id ? '#f14635' : 'white'"
+      [style.color]="selectedCategory?.id === cat.id ? 'white' : '#f14635'"
+      style="padding: 10px 25px; border: 2px solid #f14635; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s;">
+      {{ cat.name }}
+    </button>
+  }
+</nav>
+
+<main>
+  @if (selectedCategory) {
+    <app-product-list 
+      [products]="filteredProducts" 
+      (removeRequest)="handleGlobalRemove($event)">
+    </app-product-list>
+  } @else {
+    <div style="text-align: center; margin-top: 50px; color: #666;">
+      <h2>Қош келдіңіз! 👋</h2>
+      <p>Тауарларды көру үшін жоғарыдан өзіңізге қажетті категорияны таңдаңыз.</p>
+    </div>
+  }
+</main>
