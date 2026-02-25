@@ -11,12 +11,13 @@ import { ProductItemComponent } from '../product-item/product-item';
   styleUrl: './product-list.css'
 })
 export class ProductListComponent {
-  // Басты беттен келетін тауарлар тізімі (жаңа Signal синтаксисі)
+  // Ата-анадан (AppComponent) келетін тауарлар тізімі
   products = input.required<Product[]>();
   
-  // Тауарды өшіру туралы белгіні жоғары жіберу (Output)
+  // Тауарды өшіру оқиғасын ата-анаға жіберу
   removeRequest = output<number>();
 
+  // Бұл функция HTML-дегі (remove)="onRemove($event)" үшін жауап береді
   onRemove(id: number) {
     this.removeRequest.emit(id);
   }
