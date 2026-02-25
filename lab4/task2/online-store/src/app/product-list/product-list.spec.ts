@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ProductItemComponent } from './product-item'; // Атауы дұрысталды
 
-describe('ProductItemComponent', () => {
-  let component: ProductItemComponent;
-  let fixture: ComponentFixture<ProductItemComponent>;
+import { ProductList } from './product-list';
+
+describe('ProductList', () => {
+  let component: ProductList;
+  let fixture: ComponentFixture<ProductList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductItemComponent]
+      imports: [ProductList]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(ProductItemComponent);
+
+    fixture = TestBed.createComponent(ProductList);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
