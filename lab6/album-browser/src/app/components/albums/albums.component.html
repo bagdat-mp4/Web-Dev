@@ -1,0 +1,21 @@
+<div class="albums">
+  <h2>Albums</h2>
+
+  @if (loading) {
+    <p class="loading">Loading albums...</p>
+    @if (slowApi) {
+      <p class="slow-warning">API is slow, please wait...</p>
+    }
+  } @else {
+    <ul class="album-list">
+      @for (album of albums; track album.id) {
+        <li class="album-item">
+          <a [routerLink]="['/albums', album.id]" class="album-title">
+            {{ album.title }}
+          </a>
+          <button class="btn-delete" (click)="deleteAlbum(album.id)">Delete</button>
+        </li>
+      }
+    </ul>
+  }
+</div>

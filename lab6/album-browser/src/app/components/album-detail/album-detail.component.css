@@ -1,0 +1,104 @@
+.album-detail {
+  max-width: 600px;
+}
+
+.back-link {
+  display: inline-block;
+  color: #1976d2;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.album-detail h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.user-id {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.loading {
+  color: #888;
+  font-style: italic;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.title-input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.title-input:focus {
+  border-color: #1976d2;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.btn-save {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-save:hover {
+  background: #1565c0;
+}
+
+.btn-photos {
+  display: inline-block;
+  background: #43a047;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-photos:hover {
+  background: #388e3c;
+}
+
+.success {
+  color: #2e7d32;
+  font-weight: 600;
+  margin-top: 8px;
+}

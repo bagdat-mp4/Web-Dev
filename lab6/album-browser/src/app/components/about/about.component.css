@@ -1,0 +1,27 @@
+.about {
+  max-width: 640px;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #1976d2;
+  margin-bottom: 12px;
+}
+
+.about h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.about p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.about ul {
+  color: #555;
+  line-height: 1.8;
+  padding-left: 20px;
+}

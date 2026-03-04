@@ -1,0 +1,24 @@
+<div class="album-detail">
+  <a routerLink="/albums" class="back-link">← Back to Albums</a>
+
+  @if (loading) {
+    <p class="loading">Loading album...</p>
+  } @else if (album) {
+    <h2>Album #{{ album.id }}</h2>
+    <p class="user-id">User ID: {{ album.userId }}</p>
+
+    <div class="field">
+      <label for="albumTitle">Title</label>
+      <input id="albumTitle" [(ngModel)]="album.title" class="title-input" />
+    </div>
+
+    <div class="actions">
+      <button class="btn-save" (click)="save()">Save</button>
+      <a [routerLink]="['/albums', album.id, 'photos']" class="btn-photos">View Photos</a>
+    </div>
+
+    @if (saved) {
+      <p class="success">✓ Album saved successfully!</p>
+    }
+  }
+</div>
