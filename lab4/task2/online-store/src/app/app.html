@@ -1,29 +1,105 @@
-<header style="background: #f14635; color: white; padding: 20px; text-align: center;">
-  <h1>🛍️ Kaspi-ге ұқсас дүкен</h1>
+// app.html
+
+<header style="background: linear-gradient(135deg, #f14635, #d93d2d); color: white; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+  <h1 style="margin: 0; font-family: 'Syne', sans-serif;">🛍️ Kaspi-ге ұқсас дүкен</h1>
+
 </header>
 
-<nav style="display: flex; justify-content: center; gap: 15px; margin: 20px; flex-wrap: wrap;">
+
+
+<nav style="display: flex; justify-content: center; gap: 15px; margin: 20px; flex-wrap: wrap; align-items: center;">
+
+  
+
   @for (cat of categories; track cat.id) {
+
     <button 
+
       (click)="selectCategory(cat)" 
-      [style.background]="selectedCategory?.id === cat.id ? '#f14635' : 'white'"
-      [style.color]="selectedCategory?.id === cat.id ? 'white' : '#f14635'"
+
+      [style.background]="selectedCategory?.id === cat.id && !showFavorites ? '#f14635' : 'white'"
+
+      [style.color]="selectedCategory?.id === cat.id && !showFavorites ? 'white' : '#f14635'"
+
       style="padding: 10px 25px; border: 2px solid #f14635; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s;">
+
       {{ cat.name }}
+
     </button>
+
   }
+
+
+
+  <button 
+
+    (click)="openFavorites()" 
+
+    [style.background]="showFavorites ? '#ff4d4d' : 'white'"
+
+    [style.color]="showFavorites ? 'white' : '#ff4d4d'"
+
+    style="padding: 10px 25px; border: 2px solid #ff4d4d; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s; margin-left: 15px;">
+
+    Тандаулылар ({{ favoriteCount }})
+
+  </button>
+
 </nav>
 
-<main>
-  @if (selectedCategory) {
-    <app-product-list 
-      [products]="filteredProducts" 
-      (removeRequest)="handleGlobalRemove($event)">
-    </app-product-list>
-  } @else {
-    <div style="text-align: center; margin-top: 50px; color: #666;">
-      <h2>Қош келдіңіз! 👋</h2>
-      <p>Тауарларды көру үшін жоғарыдан өзіңізге қажетті категорияны таңдаңыз.</p>
+
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+  
+
+  @if (selectedCategory || showFavorites) {
+
+    
+
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+
+      <div style="background: white; padding: 5px 15px; border-radius: 12px; border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+
+        <label for="priceSelect" style="font-weight: bold; margin-right: 10px; color: #333;">Бағасы:</label>
+
+        <select id="priceSelect" (change)="onFilterChange($event)" style="border: none; outline: none; padding: 8px; font-size: 15px; cursor: pointer; background: transparent;">
+
+          <option value="all">Барлық тауарлар</option>
+
+          <option value="cheap">200 000 ₸-нен төмен</option>
+
+          <option value="expensive">200 000 ₸-нен жоғары</option>
+
+        </select>
+
+      </div>
+
     </div>
+
+
+
+    <app-product-list 
+
+      [products]="filteredProducts" 
+
+      (removeRequest)="handleGlobalRemove($event)">
+
+    </app-product-list>
+
+    
+
+  } @else {
+
+    <div style="text-align: center; margin-top: 80px; color: #666;">
+
+      <h2 style="font-size: 28px;">Қош келдіңіз! 👋</h2>
+
+      <p style="font-size: 18px;">Тауарларды көру үшін жоғарыдан өзіңізге қажетті категорияны немесе "Таңдаулыларды" таңдаңыз.</p>
+
+    </div>
+
   }
+
 </main>

@@ -59,6 +59,10 @@ function addTask() {
 
     if (!text) return;
 
+
+
+    
+
     tasks.push({
         text: text,
         completed: false

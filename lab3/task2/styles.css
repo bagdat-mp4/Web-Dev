@@ -58,7 +58,8 @@ h2 {
 }
 
 #taskList {
-    list-style: none;
+    max-height: 400px; 
+    overflow-y: auto;   
 }
 
 .task-item {
